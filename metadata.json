@@ -1,0 +1,6 @@
+{
+  "name": "Easy Spend Tracker",
+  "description": "A clean and professional mobile-first web application to track income and expenses, analyze spending habits, and manage financial data with local storage and backup options.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

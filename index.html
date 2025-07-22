@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Spend Tracker</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    <link rel="manifest" href="data:application/json;charset=utf-8,{
+      &quot;name&quot;: &quot;Easy Spend Tracker&quot;,
+      &quot;short_name&quot;: &quot;SpendTracker&quot;,
+      &quot;description&quot;: &quot;A clean and professional mobile-first web application to track income and expenses.&quot;,
+      &quot;start_url&quot;: &quot;.&quot;,
+      &quot;display&quot;: &quot;standalone&quot;,
+      &quot;background_color&quot;: &quot;#ffffff&quot;,
+      &quot;theme_color&quot;: &quot;#3b82f6&quot;,
+      &quot;icons&quot;: [
+        {
+          &quot;src&quot;: &quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12V7H5a2 2 0 0 1 0-4h14v0a2 2 0 0 1 2 2v3M3 5v14a2 2 0 0 0 2 2h16v-5a2 2 0 0 0-2-2H8a2 2 0 0 1-2-2V5Z'/%3E%3Cpath d='M12 12H8m4 4H8'/%3E%3C/svg%3E&quot;,
+          &quot;type&quot;: &quot;image/svg+xml&quot;,
+          &quot;sizes&quot;: &quot;192x192&quot;
+        },
+        {
+          &quot;src&quot;: &quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12V7H5a2 2 0 0 1 0-4h14v0a2 2 0 0 1 2 2v3M3 5v14a2 2 0 0 0 2 2h16v-5a2 2 0 0 0-2-2H8a2 2 0 0 1-2-2V5Z'/%3E%3Cpath d='M12 12H8m4 4H8'/%3E%3C/svg%3E&quot;,
+          &quot;type&quot;: &quot;image/svg+xml&quot;,
+          &quot;sizes&quot;: &quot;512x512&quot;
+        }
+      ]
+    }">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Apply dark mode immediately from localStorage to prevent flash of light mode
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary': {
+                '50': '#eff6ff', '100': '#dbeafe', '200': '#bfdbfe', '300': '#93c5fd', '400': '#60a5fa', '500': '#3b82f6', '600': '#2563eb', '700': '#1d4ed8', '800': '#1e40af', '900': '#1e3a8a', '950': '#172554'
+              },
+              'income': '#22c55e',
+              'expense': '#ef4444'
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "uuid": "https://esm.sh/uuid@^11.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3",
+    "recharts": "https://esm.sh/recharts@^3.0.2",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@3.8.2",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 dark:bg-gray-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
